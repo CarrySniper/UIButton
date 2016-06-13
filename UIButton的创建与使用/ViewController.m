@@ -34,8 +34,8 @@
     //设置背景颜色
     [button setBackgroundColor:[UIColor blueColor]];
     //设置背景图片
-    [button setBackgroundImage:[UIImage imageNamed:@"正常状态"] forState:UIControlStateNormal];
-    [button setBackgroundImage:[UIImage imageNamed:@"高亮状态"] forState:UIControlStateHighlighted];
+    [button setBackgroundImage:[UIImage imageNamed:@"正常状态.png"] forState:UIControlStateNormal];
+    [button setBackgroundImage:[UIImage imageNamed:@"高亮状态.jpg"] forState:UIControlStateHighlighted];
     
     //设置圆角  圆角半径：5.0
     [button.layer setCornerRadius:5.0];
@@ -50,13 +50,14 @@
     [button setTitle:@"高亮状态" forState:UIControlStateHighlighted];
     //设置标题字体
     [button.titleLabel setFont:[UIFont systemFontOfSize:15]];
-    //设置属性标题
-    NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString:@""];
-    [button setAttributedTitle:attributedString forState:UIControlStateNormal];
-    
     //设置标题颜色
     [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [button setTitleColor:[UIColor yellowColor] forState:UIControlStateHighlighted];
+    //设置属性标题
+    NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString:@"属性标题"];
+    NSRange strRange = {0,[attributedString length]};
+    [attributedString addAttribute:NSUnderlineStyleAttributeName value:[NSNumber numberWithInteger:NSUnderlineStyleSingle] range:strRange];
+    [button setAttributedTitle:attributedString forState:UIControlStateNormal];
     
     //设置图标
     [button setImage:[UIImage imageNamed:@"mortgage"] forState:UIControlStateNormal];
